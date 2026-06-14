@@ -31,7 +31,7 @@ background: linear-gradient(200deg,blue, violet);     - Color will change with a
 # TRANSITIONS
 img {
  <!-- Transition supports the transform code in the img:hover, You can adjust the time in ms in which the image transforms -->
-  transition: all 1500ms ease;
+  transition: all 1500ms ease-in-out;
   opacity: 1;
   color: blue;
   display block 
@@ -39,8 +39,8 @@ img {
 }
 
 img:hover {
-<!-- Scale transforms the image by increasing it whenever you hover on it -->
-<!-- Translate moves the image all across the screen when you hover on it  -->
+<!-- Scale transforms the image by increasing image size whenever you hover on it -->
+<!-- Translate moves the image all across the scree(juggles up image) when you hover on it  -->
   transform: scale(2) rotate(620deg) translate(200px, 400px);
   opacity: 0.7;
   color: red;
@@ -64,7 +64,20 @@ The Result: The image shrinks down until it perfectly fits inside that 8% wide b
 
 img {
   width: 300px;
+  <!-- width: 100%    // This is more manageble when dealing with containers i.e it stretches to occupy the whole space that is intended i.e whether space of a column given or container. 
+  it also tells the image to fit in that specicic grid column you initially provided (Best used in the fr (Fractional unit) approach)-->
 }
+.image-gallery {
+    display: grid;
+  <!-- Managable to style grid images in a specific CONTAINER 
+  Creates 2 Columns, each of the same size that fits a specific container, you don't have to specify the size it will autamtically fit hence the fr (Fractional unit) -->
+     grid-template-columns: 1fr 1fr;       // OR  //  grid-template-columns: repeat (2, 1fr);
+  <!-- If you want the container width to be different sizes but 2 columns you say:  -->
+      grid-template-columns: 1fr 2fr;      // 2nd column image sizes will be twice bigger than first column images
+    
+}
+
+                  #OR  
 
 .image-gallery {
   display: grid;
@@ -175,9 +188,16 @@ Math.random(); // 0.47231881595639025    # generates a pseudo-random floating-po
   times = times + 1;
     }
 # forEach loop
+<!-- A callback function is a function that is passed as an argument to another function, and is executed (called back) later  e.g example 1 & 2-->
   let fruits = ['apples', 'oranges', 'bananas'];
    fruits.forEach(function(fruit) {
   alert("I have " + fruit + " in my shopping bag");
+  });
+
+  // OR
+  let fruits = ['apples', 'oranges', 'bananas'];
+  fruits.forEach((fruit) => {
+  alert("I have " + fruit);
   });
 
 // or 
