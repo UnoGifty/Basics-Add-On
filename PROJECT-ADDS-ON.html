@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics-Adds-On DarkTheme</title>
+
+    <style>
+
+        h1{
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+        
+         
+        body{
+            background-image: url("https://plus.unsplash.com/premium_photo-1664283661710-ed941b904f68?q=80&w=1902&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            /* background-image: url("https://images.unsplash.com/photo-1778789172727-2b57ad4e3c33?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
+        }
+
+        .dark{
+            background: linear-gradient(109.6deg, rgb(20, 30, 48) 11.2%, rgb(36, 59, 85) 91.1%);
+            color: aliceblue;
+        }
+
+        .dark .container{
+            /* I want the container to have very little aspect of a lighter in it when toggled to dark theme hence the opacity of 0.1 */
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark .theme-button{
+            background-color: rgb(185, 203, 19);
+
+        }
+
+        .container{
+            background-color: #e7eaf6;
+            width: 630px;
+            padding: 20px;
+            border-radius: 40px;
+            /* .container is a <div> therefore already it's display: block by deafult */
+            margin: 20px auto;       
+
+        }
+        .theme-button{
+            /* A <button> is display: inline-block by default — it only takes up as much width as its content therefore you change it to whatever you prefer to suit the need */
+            display: block;
+            /* margin: 0 auto only works because display is block making button to be centered in the page*/
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid black;
+            color: aliceblue;
+            background-color: black;
+        }
+
+        
+        .btn {
+            /* display: inline-block is needed on .btn because it's an <a> tag, which starts as inline and would ignore your padding and sizing without it hence it was added despite all buttons being inline-block by default */
+                display: inline-block; /* Without inline-block in this case— padding and size won't work properly */
+                padding: 10px;
+                text-decoration: none;   /* removes the underline */
+                border-radius: 5px;
+                font-size: 16px;
+                background-color: #AE75DA;
+                color: white;
+                border: 2px solid black;
+                transition: all 150ms ease-in-out;
+                
+            }
+            .btn:hover{
+                background-color: black;
+                color: #AE75DA;
+            }
+        ul {
+                list-style-type: square; /* square bullets */
+                padding-left: 20px;
+            }
+
+        li {
+                margin-bottom: 8px;
+            }
+            
+            footer{
+                text-align: center;
+                font-size: large;
+                font-weight: 500;
+            }
+
+        .top-image {
+            width: 100%;
+            border-radius: 10px;
+            transition: all 150ms ease-in-out;
+            /* < Use the code below if you want the picture to transition slowly, remember to add the supprting filter & transform code in the hover section too */
+            /* transition: transform 150ms ease-in-out, filter 1500ms ease-in */
+        }
+
+        .top-image:hover{
+            filter: contrast(80%);
+            /* transform: scale(1.1); */
+        }
+        
+        .grid-section{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            /* overflow: hidden; 👈 keeps the scale effect contained  i.e controls size of the image when you hover on it*/
+        }
+        
+        .grid-section img{
+            border-radius: 10px;
+            /* width: 100%        →  "stretch to fill the grid column"
+              aspect-ratio: 1    →  "now make the height match that width"; This therefore helps control image height */
+            width: 100%;
+            aspect-ratio: 1;
+        }
+
+        .grid-section img:hover {
+            /* hue-rotate; This CSS filter rotates all colors in an element by 180 degrees around the color wheel, effectively inverting hues while preserving lightness and saturation. */
+            filter: hue-rotate(180deg) drop-shadow(5px 5px 10px #AE75DA);
+            transform: scale(1.2);
+        }
+
+       
+    </style>
+</head>
+<body>
+<button class="theme-button">Change Theme</button>
+<div class="container">
+    <h1>GRAPHIC DESIGN</h1>
+    <h2>My Favorite hobby</h2>
+  <div>
+    <a href="https://www.google.com/search?sca_esv=e1b2e846c339c19e&sxsrf=ANbL-n4b_PKuRFlfEODK8eZn1h3RU2v89Q:1778139766840&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3nZJTALLOiLuxpdT2uVimNuiy6dzV2oBdhPu4Cdm565L0kbJM37NYt5pGvq_g0oKmD-zPB-2IHpJaf5TOJgeltj5I7Ztu1yk6AytHMIcZfKA7fDfFp2BN7kTump4EdNhuxTG-4P6HlL7-1oz4mxrqxKs7TPe&q=graphic+design&sa=X&ved=2ahUKEwjKk6fp1qaUAxXJUqQEHRlML5gQtKgLegQIHhAB&biw=1482&bih=750&dpr=1.25">
+        <img src="https://afixsmartweb.co.ke/wp-content/uploads/2024/07/Graphic-Design-Services-In-Kenya-2.jpg" alt="Graphic design2" class="top-image">
+    </a>
+    <div class="grid-section">
+    <a href="https://www.google.com/search?sca_esv=e1b2e846c339c19e&sxsrf=ANbL-n4b_PKuRFlfEODK8eZn1h3RU2v89Q:1778139766840&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3nZJTALLOiLuxpdT2uVimNuiy6dzV2oBdhPu4Cdm565L0kbJM37NYt5pGvq_g0oKmD-zPB-2IHpJaf5TOJgeltj5I7Ztu1yk6AytHMIcZfKA7fDfFp2BN7kTump4EdNhuxTG-4P6HlL7-1oz4mxrqxKs7TPe&q=graphic+design&sa=X&ved=2ahUKEwjKk6fp1qaUAxXJUqQEHRlML5gQtKgLegQIHhAB&biw=1482&bih=750&dpr=1.25">
+        <img src="https://miro.medium.com/v2/resize:fit:1400/0*to7VlClVRgncCFch.jpg" alt="Graphic design">
+    </a>
+    <a href="https://www.google.com/search?sca_esv=e1b2e846c339c19e&sxsrf=ANbL-n4b_PKuRFlfEODK8eZn1h3RU2v89Q:1778139766840&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3nZJTALLOiLuxpdT2uVimNuiy6dzV2oBdhPu4Cdm565L0kbJM37NYt5pGvq_g0oKmD-zPB-2IHpJaf5TOJgeltj5I7Ztu1yk6AytHMIcZfKA7fDfFp2BN7kTump4EdNhuxTG-4P6HlL7-1oz4mxrqxKs7TPe&q=graphic+design&sa=X&ved=2ahUKEwjKk6fp1qaUAxXJUqQEHRlML5gQtKgLegQIHhAB&biw=1482&bih=750&dpr=1.25">
+        <img src="https://www.cdmi.in/courses@2x/3_Graphic_Design.webp" alt="">
+    </a>
+    <a href="https://www.google.com/search?sca_esv=e1b2e846c339c19e&sxsrf=ANbL-n4b_PKuRFlfEODK8eZn1h3RU2v89Q:1778139766840&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3nZJTALLOiLuxpdT2uVimNuiy6dzV2oBdhPu4Cdm565L0kbJM37NYt5pGvq_g0oKmD-zPB-2IHpJaf5TOJgeltj5I7Ztu1yk6AytHMIcZfKA7fDfFp2BN7kTump4EdNhuxTG-4P6HlL7-1oz4mxrqxKs7TPe&q=graphic+design&sa=X&ved=2ahUKEwjKk6fp1qaUAxXJUqQEHRlML5gQtKgLegQIHhAB&biw=1482&bih=750&dpr=1.25">
+        <img src="https://taschen.makaira.media/taschen/image/upload/f_webp,w_1200/v1740582925/products-live/ca7996ab01acad9154f7664bbf1345d8.png" alt="">
+    </a>
+    <a href="https://www.google.com/search?sca_esv=e1b2e846c339c19e&sxsrf=ANbL-n4b_PKuRFlfEODK8eZn1h3RU2v89Q:1778139766840&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3nZJTALLOiLuxpdT2uVimNuiy6dzV2oBdhPu4Cdm565L0kbJM37NYt5pGvq_g0oKmD-zPB-2IHpJaf5TOJgeltj5I7Ztu1yk6AytHMIcZfKA7fDfFp2BN7kTump4EdNhuxTG-4P6HlL7-1oz4mxrqxKs7TPe&q=graphic+design&sa=X&ved=2ahUKEwjKk6fp1qaUAxXJUqQEHRlML5gQtKgLegQIHhAB&biw=1482&bih=750&dpr=1.25">
+        <img src="https://prismwebdesigns.com/assets/images/illustration-banner.png" alt="">
+    </a>
+    </div> 
+  </div>
+   
+    <p>
+        Graphic design is the practice of using visuals to communicate ideas. From product packaging to social media posts, graphic designers combine color, texture, shapes, and typography to create designs that are equal parts eye-catching and purposeful. 
+        It's common to assume graphic design is only about aesthetics. But at its core, graphic design is about clarity. Great design guides attention, tells a story, and makes information easier to understand.
+        Read on to learn:
+        <ul>
+            <li>The key elements of graphic design </li>
+            <li>The difference between graphic design and UX design</li>
+            <li>What skills a graphic designer needs</li>
+            <li>Five types of graphic design</li>
+            <li>Graphic design's role in SEO and digital marketing</li>
+            <li>A brief history of graphic design and its evolution </li>
+            <li>Graphic design resources for self-guided learning</li>
+        </ul>
+    </p>
+    <!-- Center the button using the code below, since the button was placed inside an <a> tag so center it in the parent div   -->
+    <div style="text-align: center;">
+        <a href="https://www.figma.com/resource-library/what-is-graphic-design/" target="_blank" class="btn">
+            Read More
+        </a>
+    </div>
+</div>
+<Footer>Coded by UnoGifty 😍</Footer>
+<script>
+    function changeTheme(){
+        let darkTheme = document.querySelector("body");
+
+        darkTheme.classList.toggle("dark"); 
+                    // OR
+        // if (darkTheme.classList.contains("dark")){
+        //     darkTheme.classList.remove("dark")
+        // } else{
+        //     darkTheme.classList.add("dark");
+        // }
+        
+    }
+    let theme = document.querySelector(".theme-button");
+    theme.addEventListener("click", changeTheme);
+</script>
+</body>
+</html>
+
+ 
